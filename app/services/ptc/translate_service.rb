@@ -3,11 +3,12 @@ require 'uri'
 
 module Ptc
   class TranslateService
-    def initialize(data:, name: ,target_languages: )
+    def initialize(data:, name: ,target_languages:, callback_url: nil)
       @data = data
       @name = name
       @target_languages = target_languages
       @token = ENV.fetch("PTC_API_TOKEN")
+      @callback_url = callback_url
     end
 
     def call
@@ -19,7 +20,7 @@ module Ptc
     end
 
     private
-    attr_reader :data, :name, :target_languages, :token
+    attr_reader :data, :name, :target_languages, :token, :callback_url
 
     def translate
       response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
@@ -33,6 +34,7 @@ module Ptc
         data:,
         name:,
         target_languages:,
+        callback_url:,
       }.to_json
     end
 
