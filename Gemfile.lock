@@ -133,6 +133,9 @@ GEM
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitest (5.26.2)
+    mobility (1.3.2)
+      i18n (>= 0.6.10, < 2)
+      request_store (~> 1.0)
     msgpack (1.8.0)
     mutex_m (0.3.0)
     net-imap (0.5.12)
@@ -199,6 +202,8 @@ GEM
     regexp_parser (2.11.3)
     reline (0.6.3)
       io-console (~> 0.5)
+    request_store (1.7.0)
+      rack (>= 1.4)
     rexml (3.4.4)
     rubyzip (3.2.2)
     securerandom (0.4.1)
@@ -253,6 +258,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  mobility
   puma (>= 5.0)
   rails (~> 7.0.10)
   selenium-webdriver
