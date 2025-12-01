@@ -15,6 +15,8 @@ class Post < ApplicationRecord
   private
 
   def send_for_translation
-    Ptc::TranslateService.call(data: { title: title, description: description }, name: title, target_languages: ["fr", "de"])
+    data = Ptc::TranslateService.call(data: { title: title, description: description }, name: title, target_languages: ["fr", "de"])
+
+    CheckTranslationJob.set(wait: 1.minute).perform_later(id: data["id"], post_id: id)
   end
 end
