@@ -11,6 +11,8 @@ Mobility.configure do
     #
     backend :key_value
 
+    locale_accessors [:en, :fr, :de]
+
     # ActiveRecord
     #
     # Defines ActiveRecord as ORM, and enables ActiveRecord-specific plugins.
