@@ -1,4 +1,16 @@
 <div id="<%= dom_id post %>">
+  <% [:en, :fr, :de].each do |locale| %>
+    <p>
+      <strong>Title (<%= locale.to_s.upcase %>):</strong>
+      <%= post.send("title_#{locale}") %>
+    </p>
+  <% end %>
+  <% [:en, :fr, :de].each do |locale| %>
+    <p>
+      <strong>Description (<%= locale.to_s.upcase %>):</strong>
+      <%= post.send("description_#{locale}") %>
+    </p>
+  <% end %>
   <p>
     <strong>Published:</strong>
     <%= post.published %>
