@@ -5,6 +5,13 @@ class Post < ApplicationRecord
 
   after_create :send_for_translation
 
+  def set_translation(locale:, title:, description:)
+    send("title_#{locale}=", title)
+    send("description_#{locale}=", description)
+
+    save!
+  end
+
   private
 
   def send_for_translation
