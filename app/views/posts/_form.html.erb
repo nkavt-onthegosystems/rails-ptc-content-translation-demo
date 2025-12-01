@@ -11,8 +11,18 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :published, style: "display: block" %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published %>
     <%= form.check_box :published %>
   </div>
 
