@@ -9,6 +9,9 @@ gem "rails", "~> 7.0.10"
 # Dotenv for environment variables
 gem 'dotenv-rails', groups: [:development, :test]
 
+# Delayed Job for background jobs
+gem 'delayed_job_active_record'
+
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
